@@ -1,0 +1,180 @@
+\section{Background and Related Work}\label{sec:background-and-related-work}
+
+\subsection{Research and Technologies}\label{subsec:research-and-technologies}
+
+In recent years, DIY home security has risen in popularity, with modern solutions including
+doorbell cameras, fingerprint-scanning door modules, infrared motion detection sensors, and
+the occasional surveillance camera. Companies like Ring, Blink, Wyze, SimpliSafe, and Vivint
+have had a significant impact on improving the availability of home security and in the
+development of smart homes that are connected to the Internet of Things (IoT).
+
+Leading up to this point, contemporary literature has explored how using different parts
+from different manufacturers in unique configurations can be integrated into
+IoT \cite{sarhan2020}. Additionally, current literature explores how DIY home security will
+develop in relation to the blockchain \cite{arifEtAl_2020} and the growing influence
+of machine learning\cite{khanEtAl2021}. In light of this related work, this project entailed
+creating a DIY security system that will utilize contemporary microcontrollers and microwave
+motion detection sensors and will be able to interface with mini-motion proximity cameras.
+Modular design principles were used to create an efficient, small-scale security system that
+can add different access points through different modules. Combined with extensive
+documentation, users are able to test, maintain, and repair the system as needed.
+
+In addition to using modular design principles, modern technologies include using Wi-Fi
+to connect to remote servers and notify users of events with mobile notifications as well
+as web protocols to broadcast the history of detections/captures and enact security
+network management, allow for an open ecosystem that can be tailored to the user’s
+requirements/specifications and remain sustainable by persisting even if direct
+manufacturer support is no longer available.
+
+In the context of this project, the DIY security system builds upon the work established
+by research conducted by IEEE engineers and scientists that used different microcontroller
+platforms, including the Arduino and Raspberry Pi. This project explored cutting-edge devices
+and technologies that were not necessarily present at the time of previous studies, and
+further analysis is given in the State-of-the-Art section following this literature review in order of chronology.
+
+In 2014, Komninos et al. explored the threats to smart homes and smart grids with respect to
+software security and attacks involving invasions. This study uncovered that smart grids have
+the threat of message modifications, replay attacks, metric impersonation, and
+denial-of-service, while smart homes have similar threats, with unique ones including
+false synchronization and eavesdropping~\cite{komninosEtAl2014}.
+
+The main concerns for current smart homes now include false synchronization and
+denial-of-service, being the most convenient methods for burglars to effectively invade and
+loot a home. The two aforementioned attacks were taken into account when developing the DIY
+security system, learning from the limitations of this particular study.
+
+A 2017 study conducted by two IEEE researchers explored the vulnerabilities that existed
+in DIY home security systems that used sensors, microcontrollers, Raspberry Pi, and ZigBee
+communications~\cite{joseMalekian2017}. Jose and Malekian found that one limitation of these
+systems at the time included the lack of an algorithm used to understand typical
+user behavior and tripping an alarm when the algorithm judges the detected behavior as
+erratic. Another limitation of systems at the time was that the ZigBee and IEEE 802.15.4
+communications protocol were susceptible to replay attacks, allowing attackers familiar
+with the technology to exploit the vulnerability and intrude
+into the home~\cite{joseMalekian2017}.
+
+Past 2020, research focused on using platforms and technologies most closely associated with
+IoT such as certain Bluetooth specifications, alternative microcontroller platforms, and Deep
+Learning as well as public web messaging protocols. It was also a time when collective reflection was occurring and literature reviews compiling research of previous years were being published for future research and projects to reference when the COVID-19 Pandemic no longer affected current research efforts.
+
+Arif et al. examined the development of blockchain technology and its ability to
+handle great demand in its use cases in 2020. They evaluated the possibility of using
+blockchain technology to back IoT devices in DIY smart home security with a proposed
+blockchain configuration. They found that while it was cost-effective and remained
+independent of cloud storage, the computation difficulty was set to the lowest possible,
+which may become complicated as more devices are added to the security system.
+\cite{arifEtAl_2020} Variable computation difficulty is a new technique gaining popularity,
+but further research was made on the hardware requirements, and it was found to require more
+resources than what had been planned for the scope of the project. This is because the
+project will include web services and a deliberately designed user experience.
+
+IEEE member Qusay Sarhan conducted a comprehensive literature review in 2020, providing an
+overview of dozens of research reports on smart home safety and security systems that
+used the Arduino platform. It was found that the most significant challenges to building
+these systems included physical attacks, device failure (of microcontroller/module),
+power/internet outages, and software compatibility. These are factors that
+weighed heavily on this project and provided a point of reference for further learning
+and improving the work that has already been done in the field.
+Additionally, the review provided a few subjects of interest, including extendability,
+performance, visualization, and testing for stress/robustness. \cite{sarhan2020}
+
+In 2021, Khan et al. built on the work conducted by Arif et al. by exploring the role that
+machine learning could play in home security systems that utilize blockchain technology. They
+found that using a Deep Extreme Learning Machine (DELM) combined with blockchain could prove
+to be far more efficient compared to other algorithms~\cite{khanEtAl2021}. Using machine
+learning was beyond the scope of this project, but it is a valid consideration in building
+upon the work for a graduate research project.
+
+In that same year, two researchers used the Microchip Atmega8 platform to develop a system
+that was capable of three distinct types of alarms to account for different types of events,
+including fires, motion sensing, and burglary through attempted break-in. The technology used
+for motion sensing included a light-dependent potentiometer (LDR), which differs from
+conventional infrared (IR) sensors in that LDRs use the entire spectrum of visible light,
+whereas IR sensors only used a particular subset of the light spectrum. While the system was
+comprehensive, there was clear emphasis placed on the work of continuously powering the
+system through solar energy.\cite{chowdhuryAhmed2021} This presents a clear avenue for
+further development of MorteSense in future work -- Or for prospective users -- to develop
+solar-powered modules as opposed to energy-efficient, battery-dependent modules.
+
+Researchers have also explored using different tools and frameworks such as web-based
+messaging as opposed to proprietary mobile notifications or SMS notifications, as shown in a
+study conducted by a small group of researchers that developed a system based on Passive
+Infrared (PIR) sensing along with a local and Telegram-based notification methods. The local
+notification system entailed the use of a buzzer that would audibly signal any individual in
+the immediate vicinity of movement detected by the PIR sensor managed by the WEMOS D1
+microcontroller used in the configuration. Meanwhile, a Telegram notification would be
+automatically sent to the end user at the same time to notify them that motion had been
+detected within a few seconds in the locale, or up to 20.66 seconds if the user was well over
+100km away. \cite{WahyuniEtAl2021}
+
+In 2022, different computer architectures and custom solutions were explored,
+as shown in a study making use of the ATmega2560 microcontroller within an Arduino base. The
+system design involved a PIR sensor combined with an electrochemical sensor to detect both
+motion and fire hazards. The main shortcoming of this system involved the requirement of an
+object having to move for over 25 seconds before motion would be registered, and the need to
+adjust the electrochemical sensor to be able to detect certain gas contents.
+\cite{rhizmaSuhendar2022}
+
+Bluetooth was also explored instead of Wi-Fi for piconets instead of solely depending on
+Wi-Fi which allows for higher fidelity communications between devices without the need for an
+intermediary 'middle-man' device. In one study, the Arduino Nano microcontroller was used
+with Bluetooth specification HC 06 to create a small network of sensors spanning commercial
+buildings to create an effective, efficient, and inexpensive security solution. The system
+design involved the use of a PIR sensor as well as dedicated hardware to enable Bluetooth HC
+06 as well as a motor driver circuit to maneuver (assumed already-present) CCTV cameras in
+response to detected motion. Ultimately, multiple measures were used to record detected
+activity as well as sending SMS notifications through GSM to notify end users of suspicious
+activities. \cite{HameedEtAl2022}
+
+Recently, further work was built upon the work done by Arif et al. as well as Khan et al. by
+creating a customized model based on convolutional neural networks for a system built on an
+ESP32 camera for surveillance, PIR sensors for motion detection, and a DHT11 temperature and
+humidity sensor for increased accuracy of the PIR sensor. The central microcontroller was the
+ESP8266 platform that communicated through Wi-Fi, and it was found that the custom deep
+learning model was better suited to avoiding false positives, and enhance PIR accuracy
+through climate predictions rather than being able to detect unusual motion well.
+\cite{TaiwoEtAl2022}
+
+\subsection{State of the Art}\label{subsec:state-of-the-art}
+
+The current state-of-the-art home security systems employ different techniques and products
+to create a comprehensive system that can typically be tailored to the end user through the
+use of modules. These products are often well-established and are only revised in ways that
+are not directly observable by the end user. Rather, the underlying technology may change
+while the enclosure receives minor modifications at most. \cite{sarhan2020} The most common
+implementation for state-of-the-art home security systems involves the use of modules that
+connect wirelessly to a central unit through some wireless protocol. \cite{joseMalekian2017} \cite{chowdhuryAhmed2021} \cite{WahyuniEtAl2021} \cite{rhizmaSuhendar2022} \cite{HameedEtAl2022}
+
+Alternatively, each individual module can connect to the internet. \cite{sarhan2020} From
+there, the modules are handled by a mobile application that allows the user to configure
+notifications for detection, remotely set the alarm based on activity in the household, or
+remotely activate the alarm from a safe place outside the house if there is dangerous
+activity observed within. \cite{joseMalekian2017}
+
+Most modules are typically motion sensors or cameras, with motion sensors having had
+much more development over the past few years compared to cameras. For the past decade,
+motion sensors in DIY home security systems have used Passive Infrared (PIR) technology to
+detect motion with changes in temperature induced by moving objects compared to the ambient
+environment. \cite{sarhan2020} However, one limitation of PIR sensors is that they cannot
+detect motion past objects, which means that large furniture may prevent detection.
+
+Another limitation of PIR sensors is that their perception of temperature may be thrown off
+by high ambient temperature or by wind, meaning that if the weather is hot, it may not detect
+motion as a result of a false negative, or if it is windy, it may create a false
+positive. In short, PIR sensors have a reduced effective distance because
+of the environmental factors that can affect their ability to make accurate detections.
+Nonetheless, the latest advancements have resulted in the recent acceptance of microwave
+motion detector sensors that utilize the Doppler effect to detect motion behind objects
+and are not susceptible to the environmental factors that impact PIR sensors.
+\cite{sarhan2020} This means that cutting-edge DIY home security can more reliably detect
+motion behind large furniture and can be installed outside the house without as much concern
+for environmental factors affecting the capacity to detect motion.
+
+The Raspberry Pi and Arduino platforms have been extensively used as research tools by the
+IEEE to explore different wireless communications technologies in the DIY space, as well as
+for a central DIY security platform that is compared to established home/personal security
+products \cite{sarhan2020}. Over the past decade, Arduinos and their respective
+microcontrollers have increasingly used different connectivity types such as XBee, Ethernet,
+Wi-Fi, and Bluetooth \cite{sarhan2020} \cite{HameedEtAl2022}. With the release of the
+802.11n-capable Raspberry Pi Pico W in 2022, the project builds upon the work covered by
+previous research that used both mainline platforms or similar microcontrollers.
