@@ -14,16 +14,15 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: run.tex
-          working_directory: LaTeX-Documentation
 
       - name: List files
-        run: ls LaTeX-Documentation
+        run: ls
 
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
           name: PDF
-          path: LaTeX-Documentation/run.pdf
+          path: run.pdf
 
       - name: Check if tags format matches
         run: echo "GitHub ref is ${{ github.ref }}"
@@ -33,5 +32,5 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           generate_release_notes: true
-          files: LaTeX-Documentation/run.pdf
+          files: run.pdf
           token: ${{ secrets.GITHUB_TOKEN }}
