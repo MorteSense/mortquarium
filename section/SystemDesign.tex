@@ -4,29 +4,32 @@
 
 \subsubsection{Hardware Architecture}
 
-% \img{pcbDiagram}{PCB Diagram \cite{CQRobot_specs2016}}
-
 \img{hardwareArchitecture}{Hardware Architecture \cite{CQRobot_specs2016} \cite{picoW_docs2016}}
 
-The PCB will have 3 main components, the Raspberry Pi Pico W Microcontroller with
-2.4Ghz Wi-Fi Module which is in the right top corner, the 9V Battery input in the
-right bottom corner, and finally, it will have the 5.8Ghz Microwave Motion Sensor
-which is in the left top corner of the board. The motion sensor emits electromagnetic waves
-which are then reflected back to the receiver and analyzed. If the waves are altered that
-means the object that reflected them is moving. The board also will have LED indicators for
-showing the WI-FI connection indicator, power indicator, motion detection indicator, and
-connection to backend service indicator.
+The overall assembly of the motion sensor module will have 3 main components: a Raspberry Pi
+Pico W Microcontroller with 2.4Ghz Wi-Fi Module, a 9V Battery input, and a 5.8 GHz Microwave
+Motion Sensor which is in the left top corner of the board. The motion sensor emits
+electromagnetic waves which are then reflected back to the receiver and analyzed. If the waves
+are altered that means the object that reflected them is moving. The board also will have LED
+indicators for showing the WI-FI connection indicator, power indicator, motion detection
+indicator, and connection to backend service indicator.
 
-Rx-Tx serial communication was used between the
-microcontroller and motion sensor, for all other communications, the GP pins were used. The microcontroller has native Wi-Fi implementation, which means that it will be able to communicate with the server without need for additional modules to enable 802.11 Wi-Fi communications. All the hardware will be programmed in C and Micropython and was programmed to enter sleep mode and only be activated during motion detection. This configuration allows for lower power consumption.
+Rx-Tx serial communications were used between the microcontroller and motion sensor, and GP
+pins were used for all other communications. The microcontroller has native Wi-Fi
+implementation, which means that it will be able to communicate with the server without need
+for additional modules to enable 802.11 Wi-Fi communications. All the hardware was
+programmed in C and Micropython, and was configured to enter sleep mode and only be activated
+during motion detection to allow for lower power consumption.
 
 \subsubsection{Software Architecture}
 
-In \textbf{Figure \ref{fig:softwareArchitecture}}, the Notification Service is responsible for
-processing and sending notifications to users when the motion is detected using different
-means. In the current configuration, an SMS gateway using Twilio API was used for
-communication with Client Devices. It is worth noting that the Twilio API is not the only API
-that can be used for the system, as explained in the \textbf{Conclusion and Future Work}.
+In \textbf{Figure \ref{fig:softwareArchitecture}}, the overal software system architecture is
+outlined for the typical workflow when motion is detected and a notification is sent to the
+user. The Notification Service is responsible for processing and sending notifications to
+users when the motion is detected using different means. In the current configuration, an SMS
+gateway using Twilio API was used for communication with Client Devices. It is worth noting
+that the Twilio API is not the only API that can be used for the system, as explained in the
+\textbf{Conclusion and Future Work}.
 
 A database is required to store pertinent information regarding the user and the hardware. The
 Reporting and Analytics component is responsible for generating reports on system performance,
@@ -40,13 +43,21 @@ The User Management Service (UI) provides an interface for users to register and
 authenticate their devices and configure them. Users will then be able to change event logs or
 otherwise view different metrics pertaining to system health and performance. The depicted
 system were powered by Amazon AWS, but could be instead powered by other systems such as NoSQL
-and common RDBMS solutions.
+and common relational database management system solutions.
 
-The Sensor Management Software is the software that directs the microcontroller and overall hardware assembly to manage power, send communications, and configure the microwave motion sensor. The user can configure the hardware module through wired or wireless communications, with the help of the web interface.
+The Sensor Management Software is the software that directs the microcontroller and overall
+hardware assembly to manage power, send communications, and configure the microwave motion
+sensor. The user can configure the hardware module through wired or wireless communications,
+with the help of the web interface.
 
 \input{datasets/diagrams/SequenceDiagram}
 
-In \textbf{Figure \ref{fig:softwareSeqDiagramUpdated}}, a sequence diagram on multiple ends is depicted which shows a typical workflow for different actions. The actions involved include registering a device to a user's ecosystem, connecting an end client device, subscribing to hardware-provided alerts, and receiving an alert from the hardware. With the help of further documentation from the GitHub repository, more detail can be provided that the sequence diagram cannot account for..\cite{MorteSense-2023}
+In \textbf{Figure \ref{fig:softwareSeqDiagramUpdated}}, a sequence diagram on multiple ends is
+depicted which shows a typical workflow for different actions. The actions involved include
+registering a device to a user's ecosystem, connecting an end client device, subscribing to
+hardware-provided alerts, and receiving an alert from the hardware. With the help of further
+documentation from the GitHub repository, more detail can be provided that the sequence
+diagram cannot account for.\cite{MorteSense-2023}
 
 \subsection{Design Constraints, Problems, Trade-offs, and Solutions}\label{subsec:design-constraints-problems-trade-offs-and-solutions}
 
@@ -75,9 +86,7 @@ higher-voltage battery or a lower-voltage C/D battery, compared to the current 9
 However, using a lower voltage battery like AA/AAA would result in less effective mAh and
 shorter battery life for the system. When using batteries like C/D, another challenge is the
 additional space it would require in the enclosure, making it heavier and more difficult to
-mount on walls or ceilings. For this project,9V batteries offer the best compromise, as they
-have a reasonable form factor in the shape of a rectangular enclosure with rounded edges,
-making it easy to design a 3D-printed enclosure with the help of CAD software.
+mount on walls or ceilings. For this system proposed design, 9V batteries offer the best compromise, as they have a reasonable form factor in the shape of a rectangular enclosure with rounded edges, making it easy to design a 3D-printed enclosure with the help of CAD software.
 
 To address the constraints and challenges of designing a DIY home security system, several
 solutions and trade-offs have been incorporated into the system. The user interface design
@@ -85,8 +94,9 @@ aims to make it intuitive and user-friendly for users with different technical p
 levels. Compatibility is achieved by using widely adopted communication protocols and a
 microcontroller with an integrated Wi-Fi module. To ensure robust security, the system employs
 contemporary encryption techniques and secure data storage methods, including a secure
-database hosted on Amazon AWS. In terms of energy efficiency, the device enters sleep mode
-when not actively detecting motion, reducing power consumption. The system also includes
-trade-offs,such as optimizing the motion sensor's range and sensitivity, which may impact the
-overall cost and size of the system. Ultimately, these design solutions and trade-offs
-contribute to a balanced, effective DIY home security system.
+database hosted on Amazon AWS, though that is not the only database solution that can be used
+with the system, as previously mentioned. In terms of energy efficiency, the device enters
+sleep mode when not actively detecting motion, reducing power consumption. The system also
+includes trade-offs,such as optimizing the motion sensor's range and sensitivity, which may
+impact the overall cost and size of the system. Ultimately, these design solutions and
+trade-offs contribute to a balanced, effective DIY home security system.
