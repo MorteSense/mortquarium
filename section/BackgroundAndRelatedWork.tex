@@ -36,12 +36,11 @@ In 2014, Komninos et al. explored the threats to smart homes and smart grids wit
 software security and attacks involving invasions. This study uncovered that smart grids have
 the threat of message modifications, replay attacks, metric impersonation, and
 denial-of-service, while smart homes have similar threats, with unique ones including
-false synchronization and eavesdropping~\cite{komninosEtAl2014}.
-
-The main concerns for current smart homes now include false synchronization and
-denial-of-service, being the most convenient methods for burglars to effectively invade and
-loot a home. The two aforementioned attacks were taken into account when developing the DIY
-security system, learning from the limitations of this particular study.
+false synchronization and eavesdropping~\cite{komninosEtAl2014}. The main concerns for current
+smart homes now include false synchronization and denial-of-service, being the most convenient
+methods for burglars to effectively invade and loot a home. The two aforementioned attacks
+were taken into account when developing the DIY security system, learning from the limitations
+of this particular study.
 
 A 2017 study conducted by two IEEE researchers explored the vulnerabilities that existed
 in DIY home security systems that used sensors, microcontrollers, Raspberry Pi, and ZigBee
@@ -55,7 +54,10 @@ into the home~\cite{joseMalekian2017}.
 
 Past 2020, research focused on using platforms and technologies most closely associated with
 IoT such as certain Bluetooth specifications, alternative microcontroller platforms, and Deep
-Learning as well as public web messaging protocols. It was also a time when collective reflection was occurring and literature reviews compiling research of previous years were being published for future research and projects to reference when the COVID-19 Pandemic no longer affected current research efforts.
+Learning as well as public web messaging protocols. It was also a time when collective
+reflection was occurring and literature reviews compiling research of previous years were
+being published for future research and projects to reference when the COVID-19 Pandemic no
+longer affected current research efforts.
 
 Arif et al. examined the development of blockchain technology and its ability to
 handle great demand in its use cases in 2020. They evaluated the possibility of using
@@ -97,8 +99,8 @@ further development of MorteSense in future work -- Or for prospective users -- 
 solar-powered modules as opposed to energy-efficient, battery-dependent modules.
 
 Researchers have also explored using different tools and frameworks such as web-based
-messaging as opposed to proprietary mobile notifications or SMS notifications, as shown in a
-study conducted by a small group of researchers that developed a system based on Passive
+messaging as opposed to proprietary mobile app notifications or SMS notifications, as shown in
+a study conducted by a small group of researchers that developed a system based on Passive
 Infrared (PIR) sensing along with a local and Telegram-based notification methods. The local
 notification system entailed the use of a buzzer that would audibly signal any individual in
 the immediate vicinity of movement detected by the PIR sensor managed by the WEMOS D1
@@ -143,7 +145,9 @@ use of modules. These products are often well-established and are only revised i
 are not directly observable by the end user. Rather, the underlying technology may change
 while the enclosure receives minor modifications at most. \cite{sarhan2020} The most common
 implementation for state-of-the-art home security systems involves the use of modules that
-connect wirelessly to a central unit through some wireless protocol. \cite{joseMalekian2017} \cite{chowdhuryAhmed2021} \cite{WahyuniEtAl2021} \cite{rhizmaSuhendar2022} \cite{HameedEtAl2022}
+connect wirelessly to a central unit through some wireless protocol. \cite{joseMalekian2017}
+\cite{chowdhuryAhmed2021} \cite{WahyuniEtAl2021} \cite{rhizmaSuhendar2022}
+\cite{HameedEtAl2022}
 
 Alternatively, each individual module can connect to the internet. \cite{sarhan2020} From
 there, the modules are handled by a mobile application that allows the user to configure
@@ -161,14 +165,14 @@ detect motion past objects, which means that large furniture may prevent detecti
 Another limitation of PIR sensors is that their perception of temperature may be thrown off
 by high ambient temperature or by wind, meaning that if the weather is hot, it may not detect
 motion as a result of a false negative, or if it is windy, it may create a false
-positive. In short, PIR sensors have a reduced effective distance because
-of the environmental factors that can affect their ability to make accurate detections.
-Nonetheless, the latest advancements have resulted in the recent acceptance of microwave
-motion detector sensors that utilize the Doppler effect to detect motion behind objects
-and are not susceptible to the environmental factors that impact PIR sensors.
-\cite{sarhan2020} This means that cutting-edge DIY home security can more reliably detect
-motion behind large furniture and can be installed outside the house without as much concern
-for environmental factors affecting the capacity to detect motion.
+positive.\cite{rhizmaSuhendar2022} \cite{TaiwoEtAl2022} In short, PIR sensors have a reduced
+effective distance because of the environmental factors that can affect their ability to make
+accurate detections. Nonetheless, the latest advancements have resulted in the recent
+acceptance of microwave motion detector sensors that utilize the Doppler effect to detect
+motion behind objects and are not susceptible to the environmental factors that impact PIR
+sensors. \cite{sarhan2020} This means that cutting-edge DIY home security can more reliably
+detect motion behind large furniture and can be installed outside the house without as much
+concern for environmental factors affecting the capacity to detect motion.
 
 The Raspberry Pi and Arduino platforms have been extensively used as research tools by the
 IEEE to explore different wireless communications technologies in the DIY space, as well as
@@ -176,5 +180,5 @@ for a central DIY security platform that is compared to established home/persona
 products \cite{sarhan2020}. Over the past decade, Arduinos and their respective
 microcontrollers have increasingly used different connectivity types such as XBee, Ethernet,
 Wi-Fi, and Bluetooth \cite{sarhan2020} \cite{HameedEtAl2022}. With the release of the
-802.11n-capable Raspberry Pi Pico W in 2022, the project builds upon the work covered by
-previous research that used both mainline platforms or similar microcontrollers.
+802.11n-capable Raspberry Pi Pico W in 2022, the \brand{} design builds upon the work covered 
+by previous research that used both mainline platforms or similar microcontrollers.
